@@ -1,0 +1,22 @@
+.payment-lists {
+
+  .mat-radio-label {
+    .mat-radio-label-content {
+      display: flex;
+      align-content: center;
+      width: 100%;
+      height: 100%;
+
+      img {
+        width: 45px;
+        height: 45px;
+        margin-right: 10px;
+      }
+
+      p {
+        margin: auto;
+      }
+    }
+  }
+
+}

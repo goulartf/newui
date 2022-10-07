@@ -1,5 +1,13 @@
-<div class="content" role="main">
-  <span> {{ title }} </span>
+<div class="flex flex-col h-screen justify-between">
+  <main class="mb-auto">
+    <app-payment-lists></app-payment-lists>
+  </main>
+  <footer class="py-5">
+    <div class="flex items-center justify-center">
+      <span class="text-gray-300">POWERED BY</span>
+      <img src="assets/images/bluefin-logo-145x37.svg" alt="Bluefin" />
+    </div>
+  </footer>
 </div>
 
 <router-outlet></router-outlet>

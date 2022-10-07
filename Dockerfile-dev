@@ -4,13 +4,13 @@ FROM node:latest
 
 # Set the working directory
 WORKDIR /app
-RUN npm install -g @angular/cli
+RUN npm install -g @angular/cli@~14.1.0
 
 RUN apt-get update
 RUN curl -LO  https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 RUN apt-get install -y ./google-chrome-stable_current_amd64.deb
 RUN rm google-chrome-stable_current_amd64.deb
 RUN export CHROME_BIN=/usr/bin/google-chrome
+RUN npm install -g eslint
 # Check chrome version
 RUN echo "Chrome: " && google-chrome --version
-

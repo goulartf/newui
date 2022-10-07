@@ -1,0 +1,51 @@
+<div class="payment-lists px-24">
+  <mat-tab-group mat-stretch-tabs [selectedIndex]="selectedIndex">
+    <mat-tab label="">
+      <div class="py-5">
+        <h4 class="text-right">Time remaining: 12:00</h4>
+        <h2>Payment Method</h2>
+        <div class="payment-list">
+          <mat-radio-group
+            class="example-radio-group mb-4"
+            [(ngModel)]="paymentSelected">
+            <mat-list>
+              <mat-list-item
+                *ngFor="let payment of paymentOptions"
+                style="align-content: center">
+                <mat-radio-button
+                  class="example-radio-button"
+                  [value]="payment.name">
+                  <img src="/assets/images/{{ payment.icon }}" />
+                  <p>{{ payment.name }}</p>
+                </mat-radio-button>
+                <mat-divider></mat-divider>
+              </mat-list-item>
+            </mat-list>
+          </mat-radio-group>
+          <br />
+          <br />
+          <button
+            mat-raised-button
+            [disabled]="paymentSelected === ''"
+            color="primary"
+            (click)="selectTab(1)"
+            class="mt-4 w-full">
+            CONTINUE
+          </button>
+        </div>
+      </div>
+    </mat-tab>
+    <mat-tab label="">
+      {{ paymentSelected }}
+
+      <button
+        mat-raised-button
+        [disabled]="paymentSelected === ''"
+        color="primary"
+        (click)="selectTab(0)"
+        class="mt-4">
+        Back
+      </button>
+    </mat-tab>
+  </mat-tab-group>
+</div>
